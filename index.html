@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensibilidades Free Fire</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f1015;
+            color: #ffffff;
+            padding-bottom: 50px;
+        }
+
+        /* --- Barra de Navegación --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #181920;
+            padding: 15px 5%;
+            border-bottom: 2px solid #ff4500;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4500;
+        }
+
+        .menu a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #ff4500;
+        }
+
+        /* --- Banner Destacado / Oferta Principal --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            margin: 30px 5%;
+            padding: 40px;
+            border-radius: 12px;
+            gap: 20px;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .hero-text p {
+            color: #ddd;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .hero-img img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        /* --- Sección de Productos --- */
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin: 40px 0 20px;
+            color: #ff4500;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            padding: 0 5%;
+        }
+
+        .card {
+            background-color: #181920;
+            border: 1px solid #2a2b36;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ff4500;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00ffcc;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e03d00;
+        }
+
+        /* Responsive para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="logo">GAMING SENS</div>
+        <div class="menu">
+            <a href="#">Inicio</a>
+            <a href="#">Sensabilidades</a>
+            <a href="#">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Pack Sensibilidad VIP - Todo Rojo</h1>
+            <p>Configuración optimizada para todas las armas, DPI y velocidad de puntero ajustada para celulares y emulador.</p>
+            <button class="btn" style="width: auto; padding: 12px 30px;">Obtener Oferta</button>
+        </div>
+        <div class="hero-img">
+            <!-- Imagen del banner -->
+            <img src="imagenes/logo.png" alt="Sensibilidad VIP">
+        </div>
+    </section>
+
+    <!-- Catálogo de Productos -->
+    <h2 class="section-title">Nuestras Configuraciones</h2>
+
+    <div class="grid-container">
+
+        <!-- Tarjeta 1: Samsung (Carga la imagen samsung.jfif de tu carpeta) -->
+        <div class="card">
+            <img src="samsung.jfif" alt="Sensibilidad Samsung">
+            <h3>Sensibilidad Samsung</h3>
+            <p>Ajustes ideales para la serie A y S. Suavidad y precisión.</p>
+            <div class="price">$3.00 USD</div>
+            <button class="btn">Comprar</button>
+        </div>
+
+        <!-- Tarjeta 2: Xiaomi -->
+        <div class="card">
+            <img src="xiaomi.jfif" alt="Sensibilidad Xiaomi">
+            <h3>Sensibilidad Xiaomi / Poco</h3>
+            <p>Configuración de DPI y Game Turbo para tiro perfecto.</p>
+            <div class="price">$3.00 USD</div>
+            <button class="btn">Comprar</button>
+        </div>
+
+        <!-- Tarjeta 3: Emulador -->
+        <div class="card">
+            <img src="imagenes/imagesff.jpg" alt="Sensibilidad Emulador">
+            <h3>Sensibilidad Emulador</h3>
+            <p>Ajuste de mapeo X/Y y DPI para BlueStacks y MSI.</p>
+            <div class="price">$5.00 USD</div>
+            <button class="btn">Comprar</button>
+        </div>
+
+        <!-- Tarjeta 4: Custom HUD -->
+        <div class="card">
+            <img src="imagenes/xiaomi.jfif.jpeg" alt="Custom HUD Pro">
+            <h3>Custom HUD 3/4 Dedos</h3>
+            <p>Estructura de botones optimizada para levantar mira rápido.</p>
+            <div class="price">$4.00 USD</div>
+            <button class="btn">Comprar</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
