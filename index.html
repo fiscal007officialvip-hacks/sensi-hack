@@ -418,18 +418,27 @@
           sidePanel.classList.remove('active');
       }
   });
-  // Mostrar el catálogo al presionar el botón "Entrar"
-  const btnEntrar = document.getElementById('btnEntrar');
-  const catalogTitle = document.querySelector('.section-title');
-  const catalogGrid = document.querySelector('.grid-container');
+ // Mostrar el catálogo al presionar el botón "Entrar"
+document.addEventListener('DOMContentLoaded', () => {
+    const btnEntrar = document.getElementById('btnEntrar');
+    const catalogTitle = document.querySelector('.section-title');
+    const catalogGrid = document.querySelector('.grid-container');
 
-  if (btnEntrar) {
-      btnEntrar.addEventListener('click', () => {
-          catalogTitle.style.display = 'block';
-          catalogGrid.style.display = 'grid';
-          catalogTitle.scrollIntoView({ behavior: 'smooth' });
-      });
-  }
+    if (btnEntrar) {
+        btnEntrar.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Muestra el título y los productos
+            if (catalogTitle) catalogTitle.style.display = 'block';
+            if (catalogGrid) catalogGrid.style.display = 'grid';
+
+            // Desplaza la pantalla suavemente hacia abajo
+            if (catalogTitle) {
+                catalogTitle.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+});
 </script>
 </body>
 </html>
