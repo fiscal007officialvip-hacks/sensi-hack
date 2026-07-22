@@ -243,12 +243,26 @@
 .side-panel.active {
     right: 0;
 }
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #ff4500;
+}
     </style>
 </head>
 <body>
     <div id="tsparticles"></div>
     <!-- Panel Lateral Desplegable -->
 <div class="side-panel" id="sidePanel">
+    <span class="close-btn" id="closeBtn">&times;</span>
     <a href="#panel">Panel</a>
     <a href="#regedit">Regedit</a>
     <a href="#archivos">Archivos</a>
@@ -372,9 +386,32 @@
 <script>
   const menuToggle = document.getElementById('mobile-menu');
   const sidePanel = document.getElementById('sidePanel');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.querySelectorAll('.side-panel a');
 
-  menuToggle.addEventListener('click', () => {
-      sidePanel.classList.toggle('active');
+  // Abrir menú con las 3 rayitas
+  menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sidePanel.classList.add('active');
+  });
+
+  // Cerrar menú con la X
+  closeBtn.addEventListener('click', () => {
+      sidePanel.classList.remove('active');
+  });
+
+  // Cerrar al tocar una opción
+  navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          sidePanel.classList.remove('active');
+      });
+  });
+
+  // Cerrar al tocar fuera del menú
+  document.addEventListener('click', (e) => {
+      if (!sidePanel.contains(e.target) && !menuToggle.contains(e.target)) {
+          sidePanel.classList.remove('active');
+      }
   });
 </script>
 </body>
