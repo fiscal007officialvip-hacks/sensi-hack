@@ -184,10 +184,74 @@
     z-index: 1;
     pointer-events: none;
 }
+/* Botón de tres rayitas */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ff4500;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Panel Lateral Desplegable */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(15, 16, 21, 0.95);
+    backdrop-filter: blur(10px);
+    border-left: 2px solid #ff4500;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
+    transition: 0.4s ease;
+    z-index: 1000;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-panel a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.side-panel a:hover {
+    background-color: #ff4500;
+    color: #000000;
+    padding-left: 35px;
+}
+
+.side-panel.active {
+    right: 0;
+}
     </style>
 </head>
 <body>
     <div id="tsparticles"></div>
+    <!-- Panel Lateral Desplegable -->
+<div class="side-panel" id="sidePanel">
+    <a href="#panel">Panel</a>
+    <a href="#regedit">Regedit</a>
+    <a href="#archivos">Archivos</a>
+    <a href="#holograma">Holograma</a> 
+    <a href="#modmenu">Mod Menú</a>
+</div>
 
     <!-- Navegación -->
     <nav>
@@ -197,6 +261,11 @@
             <a href="#">Sensabilidades</a>
             <a href="#">Contacto</a>
         </div>
+        <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
     </nav>
 
     <!-- Banner Principal -->
@@ -287,6 +356,14 @@
       events: { resize: true }
     },
     retina_detect: true
+  });
+</script>
+<script>
+  const menuToggle = document.getElementById('mobile-menu');
+  const sidePanel = document.getElementById('sidePanel');
+
+  menuToggle.addEventListener('click', () => {
+      sidePanel.classList.toggle('active');
   });
 </script>
 </body>
