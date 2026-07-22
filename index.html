@@ -107,11 +107,11 @@
     font-size: 28px;
     margin: 40px 0 20px;
     color: #ff0000;
-    display: none;
+
 }
 
 .grid-container {
-    display: none;
+    ​display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
     padding: 0 5%;
@@ -295,7 +295,7 @@
         <div class="hero-text">
             <h1>Pack Sensibilidad VIP - Todo Rojo</h1>
             <p>Bienvenidos</p>
-           <button id="btnEntrar" class="btn" style="width: auto; padding: 12px 30px;">Entrar</button>
+           <a href="#panel" class="btn" style="width: auto; padding: 12px 30px;">Entrar</a>
         </div>
         <div class="hero-img">
             <!-- Imagen del banner -->
@@ -418,27 +418,6 @@
           sidePanel.classList.remove('active');
       }
   });
- // Mostrar el catálogo al presionar el botón "Entrar"
-document.addEventListener('DOMContentLoaded', () => {
-    const btnEntrar = document.getElementById('btnEntrar');
-    const catalogTitle = document.querySelector('.section-title');
-    const catalogGrid = document.querySelector('.grid-container');
-
-    if (btnEntrar) {
-        btnEntrar.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Muestra el título y los productos
-            if (catalogTitle) catalogTitle.style.display = 'block';
-            if (catalogGrid) catalogGrid.style.display = 'grid';
-
-            // Desplaza la pantalla suavemente hacia abajo
-            if (catalogTitle) {
-                catalogTitle.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    }
-});
 </script>
 </body>
 </html>
