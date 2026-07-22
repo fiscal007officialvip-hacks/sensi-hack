@@ -64,15 +64,19 @@
 
         /* --- Banner Destacado / Oferta Principal --- */
         .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: linear-gradient(135deg, #1f1c2c, #928dab);
-            margin: 30px 5%;
-            padding: 40px;
-            border-radius: 12px;
-            gap: 20px;
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    margin: 20px 5%;
+    padding: 40px 20px;
+    border-radius: 12px;
+    gap: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
 
         .hero-text {
             max-width: 50%;
